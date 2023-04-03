@@ -81,3 +81,13 @@ button:hover {
 button:active {
     font-size: 15px;
 }
+
+.edit {
+    display: block;
+    border: 1px solid black;
+}
+
+.edit:hover {
+    cursor: pointer;
+    background-color: grey;
+}

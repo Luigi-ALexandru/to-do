@@ -35,18 +35,6 @@ function createForm(dayBox) {
     button.textContent = "Create";
     form.appendChild(button);
 
-    button.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent form submission and page refresh
-        event.stopPropagation(); // Prevent event bubbling to parent elements
-
-        const storage = input.value;
-
-        const contentDiv = document.createElement("div");
-        contentDiv.textContent = storage;
-        dayBox.appendChild(contentDiv);
-        dayBox.removeChild(fatherDiv);
-    });
-
     dayBox.appendChild(fatherDiv);
 
     let popUp = document.querySelector(".modal");
