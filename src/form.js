@@ -1,4 +1,4 @@
-//create form
+// Create form
 function createForm(dayBox) {
     const fatherDiv = document.createElement("div");
     fatherDiv.classList.add("modal");
@@ -17,6 +17,7 @@ function createForm(dayBox) {
     input.setAttribute("placeholder", "Subject");
     div.appendChild(input);
     const input2 = document.createElement("input");
+    input2.setAttribute("class", "date");
     input2.setAttribute("type", "text");
     input2.setAttribute("placeholder", "Date");
     div.appendChild(input2);
@@ -26,6 +27,7 @@ function createForm(dayBox) {
     const div2 = document.createElement("div");
     form.appendChild(div2);
     const tarea = document.createElement("textarea");
+    tarea.setAttribute("class", "description");
     tarea.setAttribute("rows", "4");
     tarea.style.padding = "5px";
     div2.appendChild(tarea);
@@ -34,14 +36,27 @@ function createForm(dayBox) {
     button.setAttribute("type", "submit");
     button.textContent = "Create";
     form.appendChild(button);
-
+    const button2 = document.createElement("button");
+    button2.classList.add("btn2");
+    button2.textContent = "Close";
+    form.appendChild(button2);
+  
     dayBox.appendChild(fatherDiv);
-
+  
     let popUp = document.querySelector(".modal");
     popUp.style.display = "flex";
     popUp.style.flexDirection = "column";
-}
-
-export {
-    createForm
-}
+  }
+  
+  // Remove form
+  function removeForm(dayBox) {
+    const fatherDiv = dayBox.querySelector(".modal");
+    if (fatherDiv) {
+      dayBox.removeChild(fatherDiv);
+    }
+  }
+  
+  export {
+    createForm,
+    removeForm
+  };
